@@ -361,3 +361,30 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/UserSettings
+/UnityPlayerStub
+/Temp
+/ProjectSettings
+/Pirate Raiders
+/Library
+/Assembly-CSharp.Player.csproj
+/.vsconfig
+/UnityEngine.UI.Player.csproj
+/UnityEngine.UI.csproj
+/UnityEngine.TestRunner.Player.csproj
+/UnityEngine.TestRunner.csproj
+/UnityEditor.UI.csproj
+/UnityEditor.TestRunner.csproj
+/UnityCommon.props
+/Unity.VSCode.Editor.csproj
+/Unity.VisualStudio.Editor.csproj
+/Unity.Timeline.Player.csproj
+/Unity.Timeline.Editor.csproj
+/Unity.Timeline.csproj
+/Unity.TextMeshPro.Player.csproj
+/Unity.TextMeshPro.Editor.csproj
+/Unity.TextMeshPro.csproj
+/Unity.Services.Core.Editor.csproj
+/Unity.Rider.Editor.csproj
+/Unity.PlasticSCM.Editor.csproj
+/Unity.CollabProxy.Editor.csproj
