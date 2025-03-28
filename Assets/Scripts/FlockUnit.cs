@@ -34,11 +34,10 @@ public class FlockUnit : MonoBehaviour
     private void Awake()
     {
         myTransform = transform;
-        Debug.Log("First waypoint is " + Waypoint.points[0]);
         nextWaypoint = Waypoint.points[0];
         depot1 = GameObject.Find("Depot 1");
         depot2 = GameObject.Find("Depot 2");
-}
+    }
     public void assignFlock(flock flock)
     {
         assignedFlock = flock;
@@ -47,30 +46,30 @@ public class FlockUnit : MonoBehaviour
     public void InitializeSpeed(float speed)
     {
         this.speed = speed;
-        Debug.Log("inputted speed is" + speed);
     }
-    public void MoveUnit() { 
-        if(this.gameObject != null) { 
-        FindNeighbors();
-        CalculateSpeed();
-        var cohesionVector = CalculateCohesionVector() * assignedFlock.cohesionWeight;
-        var avoidanceVector = CalculateAvoidanceVector() * assignedFlock.avoidanceWeight;
-        var alignmentVector = CalculateAlignmentVector() * assignedFlock.alignmentWeight;
-        var obsticaleVector = CalculateObsticaleVector() * assignedFlock.obsticaleWeight;
-        var moveVector = (cohesionVector * 2) + (alignmentVector * 4) + (avoidanceVector * 4) + (followWaypoint() * 10) + (obsticaleVector * 50);
-        moveVector = Vector3.SmoothDamp(myTransform.forward, moveVector, ref currentVelocity, smoothDamp);
-        moveVector = moveVector.normalized * speed;
-        moveVector.z = 0;
-        if (moveVector == Vector3.zero)
+    public void MoveUnit()
+    {
+        if (this.gameObject != null)
         {
-            moveVector = transform.forward;
-        }
-        if (Vector3.Distance(transform.position, nextWaypoint.position) <= 1)
-        {
-            GetNextWaypoint();
-        }
-        myTransform.forward = (moveVector / 100);
-        myTransform.position += moveVector * Time.deltaTime;
+            FindNeighbors();
+            CalculateSpeed();
+            var cohesionVector = CalculateCohesionVector() * assignedFlock.cohesionWeight;
+            var avoidanceVector = CalculateAvoidanceVector() * assignedFlock.avoidanceWeight;
+            var alignmentVector = CalculateAlignmentVector() * assignedFlock.alignmentWeight;
+            var obsticaleVector = CalculateObsticaleVector() * assignedFlock.obsticaleWeight;
+            var moveVector = (cohesionVector * 2) + (alignmentVector * 4) + (avoidanceVector * 4) + (followWaypoint() * 10) + (obsticaleVector * 50);
+            moveVector = Vector3.SmoothDamp(myTransform.forward, moveVector, ref currentVelocity, smoothDamp);
+            moveVector = moveVector.normalized * speed;
+            if (moveVector == Vector3.zero)
+            {
+                moveVector = transform.forward;
+            }
+            if (Vector3.Distance(transform.position, nextWaypoint.position) <= 1)
+            {
+                GetNextWaypoint();
+            }
+            myTransform.forward = moveVector;
+            myTransform.position += moveVector * Time.deltaTime;
         }
     }
 
@@ -86,7 +85,8 @@ public class FlockUnit : MonoBehaviour
             speed = cohesionNeighbors[i].speed;
         }
         speed /= cohesionNeighbors.Count;
-        if (UnityEngine.Random.Range(0, 100) >= 5) { 
+        if (UnityEngine.Random.Range(0, 100) >= 5)
+        {
             speed = Mathf.Clamp(speed, assignedFlock.minSpeed, assignedFlock.maxSpeed);
         }
         else
@@ -245,6 +245,7 @@ public class FlockUnit : MonoBehaviour
     public Vector3 followWaypoint()
     {
         Vector3 dir = nextWaypoint.position - transform.position;
+        //transform.LookAt(nextWaypoint);
         return dir;
     }
 
@@ -261,36 +262,15 @@ public class FlockUnit : MonoBehaviour
         if (reverse)
         {
             wavepointIndex--;
-            x = depot1.transform.localScale.x;
-            y = depot1.transform.localScale.y;
-            z = depot1.transform.localScale.z;
-            if (x > 0 && this.isActiveAndEnabled)
-            {
-                x = x - 0.1f;
-                y = y - 0.1f;
-                z = z - 0.1f;
-                depot1.transform.localScale = new Vector3(x, y, z);
-            }
         }
         else
         {
             wavepointIndex++;
-            x1 = depot2.transform.localScale.x;
-            y1 = depot2.transform.localScale.y;
-            z1 = depot2.transform.localScale.z;
-            if (x1 > 0 && this.isActiveAndEnabled)
-            {
-                x1 = x1 - 0.1f;
-                y1 = y1 - 0.1f;
-                z1 = z1 - 0.1f;
-                depot2.transform.localScale = new Vector3(x1, y1, z1);
-            }
         }
         nextWaypoint = Waypoint.points[wavepointIndex];
         if (this.isActiveAndEnabled == true)
         {
-            score -= UnityEngine.Random.Range(1,10);
-            Debug.Log("Current Score is" + score);
+            score -= UnityEngine.Random.Range(1, 10);
         }
     }
 }

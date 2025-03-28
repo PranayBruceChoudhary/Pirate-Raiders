@@ -11,7 +11,6 @@ public class Waypoint : MonoBehaviour
         points = new Transform[transform.childCount];
         for (int i = 0; i < points.Length; i++)
         {
-            Debug.Log("transform is " + transform.GetChild(i).name);
             points[i] = transform.GetChild(i);
         }
     }

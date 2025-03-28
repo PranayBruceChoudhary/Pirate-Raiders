@@ -292,8 +292,17 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.33f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
@@ -301,8 +310,8 @@
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -669,17 +678,21 @@
       <Project>{8811E271-6CBA-5465-5E4A-9C6CFB8D663C}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TerrainTools.csproj">
-      <Project>{DF182DEC-E782-0440-E4E3-4ECC7DC063A4}</Project>
-      <Name>Unity.TerrainTools</Name>
+    <ProjectReference Include="Purchasing.Common.csproj">
+      <Project>{1F963F15-3010-9BE3-15C3-56E217BBFA3B}</Project>
+      <Name>Purchasing.Common</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{0C68ABF3-E148-DD80-086F-DFF18C7F5C06}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TerrainTools.Editor.csproj">
-      <Project>{42B759AD-5F7E-37B9-1F0C-7EF396CF1032}</Project>
-      <Name>Unity.TerrainTools.Editor</Name>
+    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
+      <Project>{FB644965-E6E6-AC7B-F970-00A9C6FFEEA4}</Project>
+      <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.csproj">
+      <Project>{C64A4E64-8F30-0AFF-D2FD-FA94563AE5C7}</Project>
+      <Name>UnityEngine.Purchasing</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{8E89365D-84FA-774B-C1FA-C276E62DE1C4}</Project>
@@ -689,10 +702,6 @@
       <Project>{B3DE6A81-1683-113C-E243-EA0BBBC3F7FF}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{588BB4EB-617C-0C2C-978A-893D19CD22F5}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{11CD9C4B-439A-E9B2-2B43-F07E6EB0A981}</Project>
       <Name>Unity.Timeline</Name>
@@ -701,21 +710,93 @@
       <Project>{BBB7A3F6-B859-706A-B54C-7016CF00ECF2}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.SecurityStub.csproj">
+      <Project>{C4860A18-2D0D-53A3-D258-404688F21142}</Project>
+      <Name>UnityEngine.Purchasing.SecurityStub</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Advertisements.csproj">
+      <Project>{543E752D-4812-FEB5-DA97-38711F6AF8F3}</Project>
+      <Name>UnityEngine.Advertisements</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{A8EE4375-038C-BFF2-E6F0-A240F203F922}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{A27825F0-ECC7-7C99-14F1-8E578D6C2F03}</Project>
       <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{1A1AF201-5E22-220A-7C40-E04CCDF119E0}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{E79396B6-91A4-B066-9B86-7D7592908C9F}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Analytics.csproj">
+      <Project>{81A82294-36F0-BC93-C1F5-1D2BC9482B24}</Project>
+      <Name>Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
+      <Project>{6B6EC704-8A58-E698-1EF1-4C018B5CACAA}</Project>
+      <Name>UnityEngine.SpatialTracking</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{C3F145DC-A2D6-5CFE-52A0-19B02F473A59}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{1A1AF201-5E22-220A-7C40-E04CCDF119E0}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
+    <ProjectReference Include="Unity.Analytics.DataPrivacy.csproj">
+      <Project>{181B4E19-4010-9CF7-0737-1B101F009A3D}</Project>
+      <Name>Unity.Analytics.DataPrivacy</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TerrainTools.csproj">
+      <Project>{DF182DEC-E782-0440-E4E3-4ECC7DC063A4}</Project>
+      <Name>Unity.TerrainTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.SecurityCore.csproj">
+      <Project>{63D68C3B-1DAF-3213-EFB2-EEB57F533E50}</Project>
+      <Name>UnityEngine.Purchasing.SecurityCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.Codeless.csproj">
+      <Project>{91F745EC-374E-3D8A-1A93-3F4386D2AE0D}</Project>
+      <Name>UnityEngine.Purchasing.Codeless</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
+      <Project>{074F270C-6B17-21C0-A2E5-D335F211C7B4}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TerrainTools.Editor.csproj">
+      <Project>{42B759AD-5F7E-37B9-1F0C-7EF396CF1032}</Project>
+      <Name>Unity.TerrainTools.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{588BB4EB-617C-0C2C-978A-893D19CD22F5}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Purchasing.Stores.csproj">
+      <Project>{181DCA7B-8447-A2DB-5E8E-37AE7A46DC37}</Project>
+      <Name>UnityEngine.Purchasing.Stores</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
+      <Project>{1CE401DB-595F-CA36-FD39-002355DDE0D4}</Project>
+      <Name>UnityEditor.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Monetization.csproj">
+      <Project>{2DCFCCC9-A202-3881-34AD-8F80A2981B7D}</Project>
+      <Name>UnityEngine.Monetization</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.Purchasing.csproj">
+      <Project>{3F59B50C-685C-9B63-F28C-480E483A98CA}</Project>
+      <Name>UnityEditor.Purchasing</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
+      <Project>{961665FC-F09C-9948-0BF9-1CC055AD04B9}</Project>
+      <Name>UnityEditor.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Advertisements.Editor.csproj">
+      <Project>{6BDE980D-6708-C4E6-61F5-A5CC1025E4AD}</Project>
+      <Name>UnityEngine.Advertisements.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

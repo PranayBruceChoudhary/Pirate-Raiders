@@ -11,79 +11,124 @@ public class Player_Movement : MonoBehaviour
     private float yaw;
     private bool fullTurn;
     private float roll;
-    private void Start()
+    private List<GameObject> activeBullets;
+    public GameObject bullet;
+    public Transform laser;
+    private bool isStopped;
+    Vector2 move;
+    private void Awake()
     {
         pitch = transform.rotation.z;
+        activeBullets = new List<GameObject>();
     }
     void Update()
     {
+        transform.Translate(new Vector3(0,0, MovementSpeed) * Time.deltaTime);
         pitch = PitchSpeed * Time.deltaTime;
         yaw = Time.deltaTime * RotationSpeed;
         roll = yaw;
+        float movement = Input.GetAxis("JoystickVertical");
+        if(movement > 0.5f)
+        {
+          PitchUp();
+        }
+        else if(movement < -0.3f)
+        {
+           PitchDown();
+        }
+        float rotation = Input.GetAxis("RightStickMovement");
+        if (rotation > 0.01f)
+        {
+            YawRight();
+        }
+        if(rotation < -0.01f)
+        {
+            YawLeft();
+        }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Rotate(pitch, 0, 0);
+            PitchUp();
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Rotate(-pitch, 0, 0);
+            PitchDown();
         }
-
-        //float rotate = Input.GetAxis("Horizontal");
-        //float rotation = rotate * RotationSpeed * Time.deltaTime;
-        if (Input.GetKey("w"))
+        if (Input.GetButtonDown("Stop"))
         {
-            float movement = MovementSpeed * Time.deltaTime;
-            transform.Translate(0, 0, movement);
-        }
-        if (Input.GetKey("s"))
-        {
-            float movement = MovementSpeed * Time.deltaTime;
-            transform.Translate(0, 0, -movement);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            float temp = transform.rotation.eulerAngles.z;
-            transform.Rotate(0, -yaw, 0, Space.World);
-            transform.Rotate(0, 0, roll, Space.Self);
-            if (Mathf.Abs(transform.rotation.eulerAngles.z - temp) >= 90)
+            if (!isStopped)
             {
-                fullTurn = true;
+                MovementSpeed = 0;
+                isStopped = true;
             }
-            //transform.rotation = Quaternion.Euler(temp, transform.rotation.y, transform.rotation.z);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow)) {
-            float temp = transform.rotation.eulerAngles.z;
-            transform.Rotate(0, yaw, 0, Space.World);
-            transform.Rotate(0, 0, -roll, Space.Self);
-            if (Mathf.Abs(transform.rotation.eulerAngles.z - temp) >= 90)
+            else
             {
-                fullTurn = true;
+                MovementSpeed = 12;
+                isStopped = false;  
             }
         }
-        else if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+         if (Input.GetKey(KeyCode.LeftArrow))
+         {
+            YawRight();
+         }
+         if (Input.GetKey(KeyCode.Return) || Input.GetButtonDown("SpeedUp"))
         {
-            /*
-            if (fullTurn)
-            {
-                int frameCount = 0;
-                while(frameCount < 1000)
-                {
-                    transform.Rotate(0, 0, 0.09f);
-                    frameCount++;
-                }
-                fullTurn = false;
-                Debug.Log("made it");
-            }
-            //transform.Rotate(0, 0, 90);
-            */
+            MovementSpeed = 35;
         }
-        //transform.Rotate(rotate * Time.deltaTime * RotationSpeed, 0, 0);
-        //transform.Rotate(0, -rotate * Time.deltaTime * RotationSpeed, 0);
-        //float movement = Input.GetAxis("Vertical") * MovementSpeed * Time.deltaTime;
-        //transform.Translate(0, movement, 0);
+        if (Input.GetKeyUp(KeyCode.Return)|| Input.GetButtonUp("SpeedUp"))
+        {
+            MovementSpeed = 12;
+        }
+        if (Input.GetKey(KeyCode.RightArrow)) {
+            YawLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire4"))
+        {
+            Shoot();
+        }
+        if(Input.GetKeyUp(KeyCode.RightShift))
+        {
+            if (!isStopped)
+            {
+                MovementSpeed = 0;
+                isStopped = true;
+            }
+            else
+            {
+                MovementSpeed = 12;
+                isStopped = false;
+            }
+        }
+    }
+    public void YawLeft()
+    {
+        transform.Rotate(0, yaw, 0, Space.World);
+        transform.Rotate(0, 0, roll, Space.Self);
+    }
+    public void YawRight()
+    {
+        transform.Rotate(0, -yaw, 0, Space.World);
+        transform.Rotate(0, 0, -roll, Space.Self);
+    }
+    public void PitchUp()
+    {
+        transform.Rotate(pitch, 0, 0);
+    }
+    public void PitchDown()
+    {
+        transform.Rotate(-pitch, 0, 0);
     }
 
+    public void Shoot()
+    {
+        activeBullets.Add(Instantiate(bullet, laser.position, laser.rotation));
+    }
+   
+
+    public void moveForward()
+    {
+            float movement = MovementSpeed * Time.deltaTime;
+            transform.Translate(0, 0, movement);
+    }
     void Pitch(Transform transform, float delta)
     {
         float pitchSpeed = 2;

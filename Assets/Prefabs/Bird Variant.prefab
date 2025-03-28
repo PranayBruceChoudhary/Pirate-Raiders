@@ -1,0 +1,365 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &221694142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221694143}
+  - component: {fileID: 221694146}
+  - component: {fileID: 221694145}
+  - component: {fileID: 221694144}
+  m_Layer: 0
+  m_Name: Bird Tail (2)
+  m_TagString: enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &221694143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221694142}
+  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0.41, y: 0.095, z: -0.71}
+  m_LocalScale: {x: 0.09860654, y: 0.04022739, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4483406776767779912}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!33 &221694146
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221694142}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &221694145
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221694142}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a1e80e86da6c901489202282c2353660, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &221694144
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221694142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: -0.0000000040048462, y: 0.000000028028536, z: 0}
+--- !u!1001 &1589752954639320368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2897975470165361429, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Name
+      value: Bird Joint To Wing (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470165361429, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470165361435, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470165361435, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470651076448, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Name
+      value: Bird Wing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470651076448, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470651076453, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470651076453, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470651076455, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470651076455, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608964, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608964, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6388
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608965, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608966, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Name
+      value: Bird Tail (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975470673608966, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666548, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666549, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Name
+      value: Bird Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666549, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666555, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471007666555, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471631395984, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Name
+      value: Bird Joint To Wing (Right (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471631395984, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471631395990, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471631395990, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471976577708, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471976577708, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471976577710, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471976577710, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471976577711, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_Name
+      value: Bird Wing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897975471976577711, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+--- !u!1 &4483406776767779909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2897975471007666549, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+  m_PrefabInstance: {fileID: 1589752954639320368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4483406776767779912 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2897975471007666552, guid: bc4eeb4b15e6a28498b04616680075bb, type: 3}
+  m_PrefabInstance: {fileID: 1589752954639320368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &110967783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483406776767779909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580b0799c44d2bd489c015d0c11e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 5
+  speed: 8
+  RotationSpeed: 45
+  PitchSpeed: 15
+  FOVAngle: 270
+  smoothDamp: 1
+  obsticaleMask:
+    serializedVersion: 2
+    m_Bits: 8
+  directionsToCheckWhenAvoidingObsticales:
+  - {x: 1, y: 0, z: 1}
+  - {x: -1, y: 0, z: 1}
+  - {x: 0, y: 1, z: 1}
+  - {x: 0, y: -1, z: 1}
+--- !u!114 &110967784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483406776767779909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65108e116c82fe140b0c5b011f1b77f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FOVAngle: 270
+  smoothDamp: 1
+  obsticaleMask:
+    serializedVersion: 2
+    m_Bits: 8
+  directionsToCheckWhenAvoidingObsticales:
+  - {x: 1, y: 0, z: 1}
+  - {x: -1, y: 0, z: 1}
+  - {x: 0, y: 1, z: 1}
+  - {x: 0, y: -1, z: 1}
